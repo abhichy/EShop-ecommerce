@@ -95,8 +95,8 @@
                                             <button id="add_row" onclick="addrow()"
                                                 class="btn btn-success pull-left btn-sm">+
                                             </button>
-                                            <button id='delete_row' onclick="remove_div($i)"
-                                                class="pull-right btn btn-danger btn-sm">-</button>
+                                            {{-- <button id='delete_row' onclick="remove_div($i)"
+                                                class="pull-right btn btn-danger btn-sm">-</button> --}}
                                         </td>
                                     </tr>
                                     <?php   } ?>

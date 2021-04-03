@@ -52,6 +52,7 @@ function addrow() {
 
 function remove_row(id) {
     $("#div_" + id).remove();
+    initial = 1;
 }
 
 $(document).ready(function () {
