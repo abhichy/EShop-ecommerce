@@ -1,4 +1,4 @@
-let initial = 1;
+let initial = 0;
 function addrow() {
     let str = "";
     initial++;
@@ -50,10 +50,7 @@ function addrow() {
     remote_select("js-data-example-ajax", Number(initial));
 }
 
-function remove_row(id) {
-    $("#div_" + id).remove();
-    initial = 1;
-}
+
 
 $(document).ready(function () {
     $("#formId").on("submit", function (event) {
@@ -197,9 +194,9 @@ const discount = (value, rowid) => {
     getTotalAmount(rowid);
 
 };
-
+let FinalAmount = [];
 const getTotalAmount = (rowId)=>{
-      let FinalAmount = [];
+      //let FinalAmount = [];
 
     $('.netAmounts').each(function(index,val){
         if(typeof FinalAmount[rowId] === 'undefined') {
@@ -209,6 +206,17 @@ const getTotalAmount = (rowId)=>{
             FinalAmount[rowId] = parseInt(val.value);
         }
     });
+    calculateValue();
+    // let result = FinalAmount.reduce(function (a, b) {
+    //     return a + b;
+    //   });
+
+    //   $('#Totalvalue').val(result);
+    //   console.log(result);
+}
+
+
+const calculateValue = ()=>{
     let result = FinalAmount.reduce(function (a, b) {
         return a + b;
       });
@@ -235,4 +243,10 @@ const Finaldiscount = ()=>{
     $('#finalnetAmounts').val(finalResult);
 }
 
+function remove_row(id) {
+    $("#div_" + id).remove();
+    initial = 1;
+    delete FinalAmount[id];
+    calculateValue();
+}
 

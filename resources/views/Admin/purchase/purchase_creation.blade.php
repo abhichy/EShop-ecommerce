@@ -70,13 +70,12 @@
                                 </thead>
 
                                 <tbody>
-                                    <?php $initial = 0; ?>
                                     <?php
-                                        for ($i=1; $i <=1 ; $i++) {
+                                        for ($i=0; $i <=0 ; $i++) {
 
                                     ?>
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{$i}}</td>
                                         <td> <select id="product-{{$i}}" onchange="productwiseprice(this.value,{{$i}})" class="js-data-example-ajax form-control"></select> </td>
                                         <td><input type="text" size="2" onkeyup="productQty(this.value,{{$i}})" id="qty-{{$i}}"  class="form-control input-sm" name="quantity[]"
                                                 id="inputEmail4" /></td>
