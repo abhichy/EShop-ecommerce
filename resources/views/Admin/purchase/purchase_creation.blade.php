@@ -83,10 +83,10 @@
                                         <td><input type="number" size="2" id="price-{{$i}}" class="form-control input-sm" name="price[]"
                                                 id="inputEmail4" /></td>
 
-                                        <td><input type="text" size="2" id="discount-{{$i}}" onkeyup="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
+                                        <td><input type="text" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
                                                 id="inputEmail4" /></td>
                                         <td>
-                                            <input type="number" readonly id="net-{{$i}}" size="2" class="form-control input-sm" name="net[]"
+                                            <input type="number" readonly id="net-{{$i}}" size="2" class="form-control input-sm netAmounts" name="net[]"
                                                 id="inputEmail4" />
                                             <input type="hidden" readonly id="hiddennet-{{$i}}" size="2" class="form-control input-sm" name="hiddennet[]"
                                                 id="inputEmail4" />
@@ -111,10 +111,10 @@
                                 </tbody>
                 </form>
                 <tr>
-                    <th colspan="4">Total</th>
+                    {{-- <th colspan="4">Total</th>
                     <td>0.00</td>
                     <td>0.00</td>
-                    <td></td>
+                    <td></td> --}}
                 </tr>
 
                 </table>
@@ -138,19 +138,19 @@
                                 <thead class="">
                                     <tr>
                                         <th style="vertical-align: middle">Total Value</th>
-                                        <td> <input type="text" class="form-control input-sm " name="email"
+                                        <td> <input type="number" readonly id="Totalvalue" class="form-control input-sm "
                                                 id="inputEmail4"> </td>
                                     </tr>
 
                                     <tr>
                                         <th style="vertical-align: middle">(-) Discount</th>
-                                        <td> <input type="text" class="form-control input-sm" name="email" id="inputEmail4">
+                                        <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="email" id="inputEmail4">
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <th style="vertical-align: middle">Net Amount</th>
-                                        <td> <input type="text " class="form-control input-sm" name="net" id="net">
+                                        <td> <input type="number" readonly id="finalnetAmounts" class="form-control input-sm" name="net">
                                         </td>
                                     </tr>
 
@@ -178,52 +178,5 @@
         </form>
     </div>
 
-
-
     <script src="{{ asset('public/admin/js/purchase_transection.js') }}"></script>
-    {{-- <script>
-        $(document).ready(function(){
-            $('.js-data-example-ajax').select2({
-            minimumInputLength: 3,
-
-            ajax: {
-                url: "all-product",
-                dataType: 'json',
-                type: "GET",
-                quietMillis: 50,
-                data: function (term) {
-                    return {
-                        _token: $("meta[name=csrf-token]").attr('content'),
-
-                        name: term,
-
-                    };
-                },
-                processResults: function (data) {
-
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.product_name,
-                                id: item.id,
-                            }
-                        })
-                    };
-                },
-                transport: function (params, success, failure) {
-                    var $request = $.ajax(params);
-
-                    $request.then(success);
-                    $request.fail(failure);
-
-                    return $request;
-                }
-            }
-        });
-        });
-    </script> --}}
-
 @endsection
-{{-- @section('script')
-
-@endsection --}}

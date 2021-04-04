@@ -26,12 +26,12 @@ function addrow() {
         '" class="form-control input-sm" name="price[]" />' +
         "</td>" +
         "<td>" +
-        '<input type="number" size="2" id="discount-'+Number(initial)+'" onkeyup="discount(this.value,Number(initial))" class="form-control input-sm" name="discount[]" />' +
+        '<input type="number" size="2" id="discount-'+Number(initial)+'" onchange="discount(this.value,Number(initial))" class="form-control input-sm" name="discount[]" />' +
         "</td>" +
         "<td>" +
         '<input type="number" readonly id="net-' +
         Number(initial) +
-        '" size="2" class="form-control input-sm" id="net-'+Number(initial)+'" name="net[]"  />' +
+        '" size="2" class="form-control input-sm netAmounts" id="net-'+Number(initial)+'" name="net[]"  />' +
         '<input type="hidden" readonly id="hiddennet-'+Number(initial)+'" + Number(initial) + " size="2" class="form-control input-sm" name="hiddennet[]"  />' +
         "</td>" +
         "<td>" +
@@ -194,12 +194,45 @@ const discount = (value, rowid) => {
     let netdiscount = (netAmount * discount) / 100;
     let netTotal = netAmount - netdiscount;
     $("#net-" + rowid).val(netTotal);
+    getTotalAmount(rowid);
 
-    let net =$("input[name='net']").val();
-    for(let i = 1; i< net.length; i++){
-        console.log(net[i]);
-    }
-    // console.log(netTotal);
 };
+
+const getTotalAmount = (rowId)=>{
+      let FinalAmount = [];
+
+    $('.netAmounts').each(function(index,val){
+        if(typeof FinalAmount[rowId] === 'undefined') {
+            FinalAmount.push(parseInt(val.value));
+        }
+        else {
+            FinalAmount[rowId] = parseInt(val.value);
+        }
+    });
+    let result = FinalAmount.reduce(function (a, b) {
+        return a + b;
+      });
+
+      $('#Totalvalue').val(result);
+      console.log(result);
+}
+
+
+// get final discount ..........
+
+const Finaldiscount = ()=>{
+    let final_discount = $('#finalDiscount').val();
+    let total_value = $('#Totalvalue').val();
+    if(typeof final_discount ==='undefined'){
+        final_discount = 0;
+    }
+    if(typeof total_value ==='undefined'){
+        total_value = 0;
+    }
+
+    let discountTotal = total_value * final_discount / 100
+    let finalResult = total_value - discountTotal
+    $('#finalnetAmounts').val(finalResult);
+}
 
 
