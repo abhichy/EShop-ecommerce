@@ -1,13 +1,15 @@
 let initial = 0;
+let serial = 1
 function addrow() {
     let str = "";
     initial++;
+    serial++;
     str +=
         '<tr id="div_' +
         Number(initial) +
         '">' +
         "<td>" +
-        Number(initial) +
+        Number(serial) +
         "</td>" +
         "<td>" +
         '<select class="js-data-example-ajax form-control " onchange="productwiseprice(this.value,Number(initial))" id="product-' +
@@ -16,7 +18,7 @@ function addrow() {
         "</select>" +
         "</td>" +
         "<td>" +
-        '<input type="text" size="2" onkeyup="productQty(this.value,Number(initial))" id="qty-' +
+        '<input type="number" size="2" onkeyup="productQty(this.value,Number(initial))" id="qty-' +
         Number(initial) +
         '"  class="form-control input-sm" name="quantity[]"/>' +
         "</td>" +
@@ -246,6 +248,7 @@ const Finaldiscount = ()=>{
 function remove_row(id) {
     $("#div_" + id).remove();
     initial = 1;
+    serial = 1;
     delete FinalAmount[id];
     calculateValue();
 }

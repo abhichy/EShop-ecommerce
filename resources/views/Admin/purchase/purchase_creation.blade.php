@@ -75,14 +75,14 @@
 
                                     ?>
                                     <tr>
-                                        <td>{{$i}}</td>
+                                        <td>{{$i+1}}</td>
                                         <td> <select id="product-{{$i}}" onchange="productwiseprice(this.value,{{$i}})" class="js-data-example-ajax form-control"></select> </td>
-                                        <td><input type="text" size="2" onkeyup="productQty(this.value,{{$i}})" id="qty-{{$i}}"  class="form-control input-sm" name="quantity[]"
+                                        <td><input type="number" size="2" onkeyup="productQty(this.value,{{$i}})" id="qty-{{$i}}"  class="form-control input-sm" name="quantity[]"
                                                 id="inputEmail4" /></td>
                                         <td><input type="number" size="2" id="price-{{$i}}" class="form-control input-sm" name="price[]"
                                                 id="inputEmail4" /></td>
 
-                                        <td><input type="text" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
+                                        <td><input type="number" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
                                                 id="inputEmail4" /></td>
                                         <td>
                                             <input type="number" readonly id="net-{{$i}}" size="2" class="form-control input-sm netAmounts" name="net[]"
