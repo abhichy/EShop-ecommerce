@@ -145,7 +145,7 @@
                                     </tr>
 
                                     <tr>
-                                        <th style="vertical-align: middle">(-) Discount</th>
+                                        <th style="vertical-align: middle">Discount(BDT)</th>
                                         <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="email" id="inputEmail4">
                                         </td>
                                     </tr>
