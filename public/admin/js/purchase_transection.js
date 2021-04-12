@@ -48,6 +48,7 @@ function addrow() {
         "</td>" +
         "</tr>";
 
+
     $("#dynamicRow").append(str);
     remote_select("js-data-example-ajax", Number(initial));
 }
