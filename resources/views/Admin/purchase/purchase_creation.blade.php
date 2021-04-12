@@ -61,6 +61,7 @@
                                         <th>Product Name</th>
                                         <th>Qty</th>
                                         <th>Price</th>
+                                        <th>Sub Total</th>
                                         <th>Discount (%)</th>
                                         <th>Net</th>
                                         {{-- <th style="width: 20px;">Price</th> --}}
@@ -80,6 +81,8 @@
                                         <td><input type="number" size="2" onkeyup="productQty(this.value,{{$i}})" id="qty-{{$i}}"  class="form-control input-sm" name="quantity[]"
                                                 id="inputEmail4" /></td>
                                         <td><input type="number" size="2" id="price-{{$i}}" class="form-control input-sm" name="price[]"
+                                                id="inputEmail4" /></td>
+                                        <td><input type="number" size="2" readonly id="subtotals-{{$i}}" class="form-control input-sm subtotal" name="sub_total[]"
                                                 id="inputEmail4" /></td>
 
                                         <td><input type="number" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
@@ -142,7 +145,11 @@
                                     </tr>
 
                                     <tr>
+<<<<<<< HEAD
                                         <th style="vertical-align: middle">Discount (%)</th>
+=======
+                                        <th style="vertical-align: middle">Discount(BDT)</th>
+>>>>>>> ace6ce6d6eb9ee9fbb7696e5f80e47de106a2b5c
                                         <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="email" id="inputEmail4">
                                         </td>
                                     </tr>
