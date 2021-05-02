@@ -33,14 +33,14 @@ function addrow() {
         '" class="form-control input-sm subtotal" name="sub_total[]" />' +
         "</td>" +
         "<td>" +
-        '<input type="number" size="2" id="discount-' +
+        '<input type="number" class="finalDiscount" size="2" id="discount-' +
         Number(initial) +
         '" onchange="discount(this.value,Number(initial))" class="form-control input-sm" name="discount[]" />' +
         "</td>" +
         "<td>" +
         '<input type="number" readonly id="net-' +
         Number(initial) +
-        '" size="2" class="form-control input-sm netAmounts" id="net-' +
+        '" size="2" class="form-control input-sm netAmounts net_amounts" id="net-' +
         Number(initial) +
         '" name="net[]"  />' +
         '<input type="hidden" readonly id="hiddennet-' +
@@ -279,6 +279,8 @@ const Finaldiscount = () => {
 
     let discountTotal = (total_value * final_discount) / 100;
     let finalResult = total_value - discountTotal;
+    $('.finalDiscount').val(final_discount);
+    $("#finalnetAmounts").val(finalResult);
 };
 
 function remove_row(id) {
@@ -289,3 +291,6 @@ function remove_row(id) {
     calculateValue();
 }
 
+const all_in_one_discount = ()=>{
+    // finalDiscount
+}
