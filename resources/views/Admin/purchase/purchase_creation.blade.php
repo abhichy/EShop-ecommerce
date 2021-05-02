@@ -85,7 +85,7 @@
                                         <td><input type="number" size="2" readonly id="subtotals-{{$i}}" class="form-control input-sm subtotal" name="sub_total[]"
                                                 id="inputEmail4" /></td>
 
-                                        <td><input type="number" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm" name="discount[]"
+                                        <td><input type="number" size="2" id="discount-{{$i}}" onchange="discount(this.value,{{$i}})" class="form-control input-sm finalDiscount" name="discount[]"
                                                 id="inputEmail4" /></td>
                                         <td>
                                             <input type="number" readonly id="net-{{$i}}" size="2" class="form-control input-sm netAmounts" name="net[]"
@@ -146,7 +146,7 @@
 
                                     <tr>
                                         <th style="vertical-align: middle">Discount(BDT)</th>
-                                        <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="email" id="inputEmail4">
+                                        <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="final_discount" id="inputEmail4">
                                         </td>
                                     </tr>
 
