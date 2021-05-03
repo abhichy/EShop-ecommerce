@@ -35,7 +35,7 @@ function addrow() {
         "<td>" +
         '<input type="number" class="finalDiscount" size="2" id="discount-' +
         Number(initial) +
-        '" onchange="discount(this.value,Number(initial))" class="form-control input-sm" name="discount[]" />' +
+        '" onchange="discount(this.value,Number(initial))" class="form-control input-sm Discounts" name="discount[]" />' +
         "</td>" +
         "<td>" +
         '<input type="number" readonly id="net-' +
@@ -158,6 +158,7 @@ function remote_select(cls, id) {
 let TotalValue = [];
 let discountsarray = [];
 let FinalAmount = [];
+let Discountpercent = [];
 // ******************************* end all array *******************************
 // get product wise price
 
@@ -235,6 +236,7 @@ const discount = (value, rowid) => {
     });
 
     $("#finalDiscount").val(sumofdiscount);
+    sumofdiscountpercent(value,rowid);
 };
 
 
@@ -288,9 +290,20 @@ function remove_row(id) {
     initial = 1;
     serial = 1;
     delete FinalAmount[id];
+    delete Discountpercent[id];
     calculateValue();
 }
 
-const all_in_one_discount = ()=>{
-    // finalDiscount
+const sumofdiscountpercent = (value,rowId)=>{
+    if (typeof Discountpercent[rowId] === "undefined") {
+        Discountpercent.push(parseInt(value));
+    } else {
+        Discountpercent[rowId] = parseInt(value);
+    }
+    console.log('Discount % = ',Discountpercent);
+    let sumofdiscount = Discountpercent.reduce(function (a, b) {
+        return a + b;
+    });
+
+    $('#DiscountParcent').val(sumofdiscount);
 }
