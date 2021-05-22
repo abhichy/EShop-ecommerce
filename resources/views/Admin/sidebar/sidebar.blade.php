@@ -81,6 +81,11 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Purchase</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('sales-create')}}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Sales</span></a>
+        </li>
 
 
     </ul>

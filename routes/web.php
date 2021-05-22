@@ -250,5 +250,6 @@ Route::get('/all-product', 'Admin\Purchase\PurchaseController@products');
 Route::get('/product-wise-price/{id}', 'Admin\Purchase\PurchaseController@product_wise_price');
 
 
-
+// for sales .. ..
+Route::get('/sales-create', 'Admin\Sales\SalesController@index')->name('sales-create');
 
