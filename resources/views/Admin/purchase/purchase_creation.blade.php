@@ -149,12 +149,6 @@
                                         <td> <input type="number" id="finalDiscount" onkeyup="Finaldiscount()" class="form-control input-sm" name="email" id="inputEmail4">
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <th style="vertical-align: middle">Discount (%)</th>
-                                        <td> <input type="number" id="" class="form-control input=sm">
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <th style="vertical-align: middle">Discount(%)</th>
                                         <td> <input type="number" id="DiscountParcent" class="form-control input-sm" name="final_percent">
