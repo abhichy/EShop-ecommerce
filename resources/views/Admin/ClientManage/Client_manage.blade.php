@@ -54,7 +54,7 @@
                                                 </a>
                                                 @if ($v_client->status == 0)
                                                     <a href="{{ route('client-active', ['id' => $v_client->id]) }}"><b
-                                                            style="color:green">active</b></a> 
+                                                            style="color:green">active</b></a>
                                                 @else
                                                     <a href="{{ route('client-deactive', ['id' => $v_client->id]) }}"><b
                                                             style="color:red">inactive</b></a>

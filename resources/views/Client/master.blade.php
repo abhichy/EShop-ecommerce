@@ -97,7 +97,7 @@
 
 <!-- Footer -->
 @include('Client.Footer.footer')
-<p>&copy; Developed by <a>ABHI CHOWDHURY</a></p>
+<p>&copy; Developed by <a>App Incubator</a></p>
 </footer>
 <!-- Scripts -->
 
