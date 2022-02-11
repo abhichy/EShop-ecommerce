@@ -5,7 +5,6 @@
 {{-- <body id="page-top"> --}}
 
 
-
   {{-- <div id="wrapper"> --}}
     <div id="content-wrapper">
       <div class="container-fluid">
@@ -15,7 +14,6 @@
           <li class="breadcrumb-item active">Add New</li>
         </ol>
         <!-- /Breadcrumbs-->
-
 
 
 
@@ -36,7 +34,6 @@
             </div> -->
 
             <br>
-
             <div class="form-group">
               <label for="type_name">Category Name</label>
             <input id="category_name" name="category_name" value="{{$category->category_name}}" class="form-control form-control-lg" type="text" placeholder=""  required
@@ -93,12 +90,10 @@
 
 
 
-
       </div>
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-
       <!-- Sticky Footer -->
 
     </div>
@@ -117,7 +112,6 @@
 
   <!-- Bootstrap core JavaScript-->
 
-
 <!-- Product image add Modal -->
 <!--<div class="modal fade" id="addImageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
 <!--        <div class="modal-dialog" role="document">-->
@@ -130,14 +124,12 @@
 <!--            </div>-->
 
 
-
 <!--            <form class="form-group" action="<?//=base_url('product_ctrl/add_product_image')?>" method="POST" enctype="multipart/form-data">-->
 <!--                <div class="modal-body">-->
 <!--                        <input type="hidden" name="product_id" value="<?//=$category->id?>">                     -->
 <!--                        <div class="">-->
 
 <!--                            <div class="text-center">-->
-
 <!--                                <label for="file-upload" class="btn btn-primary btn-lg btn-icon-split" style="cursor: pointer">-->
 <!--                                    <span class="icon text-white-50">-->
 <!--                                        <i class="fas fa-file-upload"></i>-->
@@ -145,7 +137,6 @@
 <!--                                    <span class="text text-white-50">Upload Image</span>-->
 <!--                                </label>-->
 <!--                                <input required id="file-upload" style="display: none" type="file" name="image-file"/>-->
-
 <!--                            </div> -->
 
 <!--                        </div>    -->

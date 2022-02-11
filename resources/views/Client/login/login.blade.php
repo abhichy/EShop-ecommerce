@@ -81,7 +81,6 @@
                     <div class="sign-up">
                         Don't have an account? <a href="{{route('client-register')}}">Create One</a>
                     </div>
-
                 </form>
             </div>
         </div>
