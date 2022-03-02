@@ -16,16 +16,16 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('order_id');
-            $table->bigInteger('product_id');
-            $table->integer('product_quantity');
+            $table->bigInteger('client_id');
             $table->bigInteger('vendor_id');
-            $table->float('product_unite_price', 10, 0);
-            $table->float('unit_x_quantity_price', 10, 0)->nullable();
-            $table->string('invoice_type', 30)->nullable();
-            $table->boolean('to_delivery')->nullable()->comment('delivery status	');
-            $table->date('date')->nullable();
-            $table->integer('status')->default(1);
-            $table->integer('trash')->default(0);
+            $table->bigInteger('product_id');
+            $table->double('product_unit_price');
+            $table->integer('product_quantity');
+            $table->double('unit_x_quantity')->nullable();
+            $table->double('invoice_discount');
+            $table->double('invoice_after_discount')->nullable();
+            $table->integer('status')->default(1)->comment('1=pending;2=processing;3=cancelled;4=adminAccept;5=delivered');
+            $table->text('pdf')->nullable();
             $table->timestamps();
         });
     }

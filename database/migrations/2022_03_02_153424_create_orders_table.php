@@ -18,17 +18,15 @@ class CreateOrdersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-            $table->integer('vendor_id')->unsigned()->nullable();
-            $table->integer('client_id')->unsigned();
-            $table->integer('product_id');
-            $table->string('phone_number');
-            $table->integer('post_code')->unsigned();
-            $table->string('product_name');
-            $table->integer('product_quantity');
-            $table->string('product_price');
+            $table->unsignedInteger('client_id');
+            $table->string('sub_total', 255);
+            $table->float('discount', 10, 0);
+            $table->string('total_cost', 255);
             $table->string('address');
-            $table->tinyInteger('status')->default(1)->comment('1 = pending; 2=accepted; 3=cancelled');;
-            $table->tinyInteger('delivered');
+            $table->string('phone_number', 255);
+            $table->string('alphonenumber', 255)->nullable();
+            $table->tinyInteger('status')->default(1)->comment('1 = pending; 2=processing; 3=cancelled;4=delivered');
+            $table->tinyInteger('delivered')->nullable()->default(0)->comment('no=0 ; yes=1');
             $table->timestamps();
         });
     }

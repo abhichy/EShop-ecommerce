@@ -150,7 +150,6 @@ function orderCheckout(v){
     let expireDate=$("#expireDate").val();
     let security_number=$("#sec-no").val();
     let comment=$("#comment").val();
-    let api=getUrl();
     isCartExist(function(data){
         if(data.total <= 0)
         {
@@ -180,7 +179,7 @@ function orderCheckout(v){
                         icon: 'success',
                         title: 'Your Order Created Successfully'
                       });
-                      window.location.href=api+'order-list'
+                      window.location.href='/order-list'
 				}
 			});
         }
@@ -413,12 +412,11 @@ function addToCart(v){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    var api=getUrl();
     // alert(api);
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: api+"add-to-cart",
+        url: "/add-to-cart",
         data: {id:id,qty:qty},
         success: function (data) {
 

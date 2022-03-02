@@ -15,14 +15,13 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id')->unsigned();
-            $table->bigInteger('client_id');
-            $table->string('card_name');
-            $table->integer('payment_type')->unsigned();
-            $table->integer('card_number')->unsigned();
-            $table->date('expireDate');
-            $table->integer('security_number')->unsigned();
-            $table->text('comment');
+            $table->unsignedInteger('order_id');
+            $table->unsignedBigInteger('client_id');
+            $table->integer('payment_type');
+            $table->string('card_name')->nullable();
+            $table->unsignedInteger('card_number')->nullable();
+            $table->date('expireDate')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

@@ -1,8 +1,6 @@
 $(document).ready(function(){
     $("#findBtn").click(function(){
       var price = $('#productPrice').val();
-      // alert(price);
-      var api=getUrl();
       $.ajaxSetup({
           headers: {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -10,7 +8,7 @@ $(document).ready(function(){
       });
       $.ajax({
         type: "GET",
-        url: api+"price-filter",
+        url: "/price-filter",
         data: {min:1,max:price},
         cache: false,
         success: function(html){
@@ -25,9 +23,6 @@ $(document).ready(function(){
   });
 
 $(document).on("click",".cate_filter",function () {
-
-    var li=getUrl();
-
     var list=[];var i=0;
     $(".cate_filter").each(function () {
         if($(this).is(":checked"))
@@ -87,8 +82,6 @@ $(document).on("click",".cate_filter",function () {
 
 // brand wise product...............
 $(document).on("click",".brandFilter",function () {
-
-    var li=getUrl();
         // alert('hello world');
     var list=[];var i=0;
     $(".brandFilter").each(function () {

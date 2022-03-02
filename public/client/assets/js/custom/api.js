@@ -1,7 +1,7 @@
 
 
 function getUrl(){
-    var comm="http://localhost/EShop-ecommerce-master/"; // IT SHOULD BE YOUR SITE URL ...(BASE URL)
+    var comm="/"; // IT SHOULD BE YOUR SITE URL ...(BASE URL)
     return comm;
 }
 function ajaxSetup(callback, method, url, data) {

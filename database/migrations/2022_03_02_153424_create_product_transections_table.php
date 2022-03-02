@@ -14,14 +14,15 @@ class CreateProductTransectionsTable extends Migration
     public function up()
     {
         Schema::create('product_transections', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('invoice_no',50);
-            $table->date ('date');
-            $table->integer('vendor_id');
-            $table->decimal('total_value', $precision = 50, $scale = 2);
-            $table->integer('discount',50);
-            $table->text('remarks');
-            $table->timestamps();
+            $table->integer('id', true);
+            $table->integer('invoice_no')->nullable();
+            $table->date('date')->nullable();
+            $table->integer('vendor_id')->nullable();
+            $table->decimal('total_value', 50)->nullable();
+            $table->integer('discount')->nullable();
+            $table->text('remarks')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

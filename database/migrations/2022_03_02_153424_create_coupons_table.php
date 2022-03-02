@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductTransectionInvsTable extends Migration
+class CreateCouponsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,14 @@ class CreateProductTransectionInvsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_transection_invs', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('code');
+            $table->integer('percent');
+            $table->float('min_amount', 10, 0);
+            $table->dateTime('from');
+            $table->dateTime('to');
+            $table->integer('availability');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateProductTransectionInvsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_transection_invs');
+        Schema::dropIfExists('coupons');
     }
 }
