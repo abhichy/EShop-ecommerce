@@ -35,7 +35,7 @@
                     <p>
                         Your sweeping costs with the
                     </p>
-                    <h1 class="header-title">EShop<br><span class="header-quote">FAST AND EASY</span></h1>
+                    <h1 class="header-title">Ecommerce<br><span class="header-quote">FAST AND EASY</span></h1>
                 </div>
             </div>
 
