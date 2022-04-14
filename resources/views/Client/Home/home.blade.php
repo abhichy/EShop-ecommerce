@@ -31,7 +31,7 @@
                         <button class="btn btn-primary">Sign in</button>
                     </div> -->
                 <div class="col-6 offset-6">
-                    <h2 class="header-quote">Save month-to-month</h2>
+                    <h2 class="header-quote">Save year-to-year</h2>
                     <p>
                         Your sweeping costs with the
                     </p>
