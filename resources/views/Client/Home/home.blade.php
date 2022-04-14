@@ -48,7 +48,7 @@
         <div class="container-fluid section-bg">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>All Trending <b>Products</b></h2>
+                    <h2>Trending <b>Products</b></h2>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
                         <!-- Carousel indicators -->
                         <!--<ol class="carousel-indicators">-->
